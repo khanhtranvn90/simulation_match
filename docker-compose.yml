@@ -51,6 +51,11 @@ services:
       MYSQL_ROOT_PASSWORD: rootsecret
     ports:
       - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "match_simulation", "-psecret"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
     volumes:
       - db_data:/var/lib/mysql
     networks:

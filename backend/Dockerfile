@@ -4,7 +4,10 @@ WORKDIR /var/www/html
 
 RUN apt-get update && apt-get install -y \
     libpng-dev libonig-dev libxml2-dev zip unzip git curl \
-    && docker-php-ext-install pdo pdo_mysql mbstring exif pcntl bcmath gd
+    && docker-php-ext-install pdo pdo_mysql mbstring exif pcntl bcmath gd 
+
+RUN curl -L https://github.com/jwilder/dockerize/releases/download/v0.6.1/dockerize-linux-amd64-v0.6.1.tar.gz \
+    | tar -C /usr/local/bin -xz
 
 RUN pecl install redis \
     && docker-php-ext-enable redis

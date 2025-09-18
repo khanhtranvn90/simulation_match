@@ -4,7 +4,7 @@ COMPOSE_FILE=docker-compose.yml
 
 up:
 	@echo "Starting Docker Compose services..."
-	docker compose -f $(COMPOSE_FILE) up -d
+	docker compose -f $(COMPOSE_FILE) up
 
 down:
 	@echo "Stopping and removing Docker Compose services..."
@@ -12,7 +12,7 @@ down:
 
 build:
 	@echo "Building Docker Compose services..."
-	docker compose -f $(COMPOSE_FILE) build
+	docker compose -f $(COMPOSE_FILE) build --no-cache
 
 restart:
 	@echo "Restarting Docker Compose services..."
@@ -35,7 +35,7 @@ remove-all:
 rebuild: remove-all
 	@echo "Rebuilding and starting Docker Compose services from scratch..."
 	docker compose -f $(COMPOSE_FILE) build --no-cache
-	docker compose -f $(COMPOSE_FILE) up -d
+	docker compose -f $(COMPOSE_FILE) up
 	@echo "Rebuild completed."
 
 help:
