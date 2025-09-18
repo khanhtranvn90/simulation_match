@@ -20,6 +20,7 @@ You can build and start the project using:
 
 ```bash
 make build
+make up
 ```
 
 Once running, access the app in your browser at:
