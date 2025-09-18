@@ -1,0 +1,66 @@
+# Laravel backend
+/vendor/
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn.lock
+composer.lock
+.env
+.env.backup
+.env.*.backup
+storage/framework/*
+!storage/framework/.gitkeep
+storage/logs/*
+!storage/logs/.gitkeep
+storage/app/public/*
+!storage/app/public/.gitkeep
+/bootstrap/cache/*
+!.gitkeep
+
+# Vue.js frontend
+/frontend/node_modules
+/frontend/dist/*
+/frontend/.cache
+/frontend/.vite
+/frontend/vite.config.js.timestamp-*
+/frontend/*.log
+/frontend/.env
+/frontend/.env.local
+/frontend/.env.*.local
+
+# Docker
+/docker-compose.yml.local
+/docker-compose.override.yml
+/.docker
+Dockerfile.local
+*.dockerignore
+*.log
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# System files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.bak
+*.tmp
+*.temp
+
+# IDE and editor files
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Miscellaneous
+*.log
+ Homestead.yaml
+Homestead.json
+/public/hot
+/public/storage
+/public/.htaccess
