@@ -1,14 +1,10 @@
 COMPOSE_FILE=docker-compose.yml
 
-.PHONY: setup up down build restart shell redis-cli remove-all rebuild help
+.PHONY: up down build restart shell redis-cli remove-all rebuild help
 
-setup:
-	@echo "Installing PHP dependencies inside backend container..."
-	docker compose run --rm backend composer install --no-interaction --prefer-dist --optimize-autoloader
-
-up: setup
+up:
 	@echo "Starting Docker Compose services..."
-	docker compose -f $(COMPOSE_FILE) up
+	docker compose -f $(COMPOSE_FILE) up -d
 
 down:
 	@echo "Stopping and removing Docker Compose services..."

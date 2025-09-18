@@ -11,8 +11,8 @@ RUN pecl install redis \
 
 COPY --from=composer:2.5 /usr/bin/composer /usr/bin/composer
 
+COPY ./.env.example ./.env
 COPY . /var/www/html
-COPY ./.env.example /var/www/html/.env
 
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
